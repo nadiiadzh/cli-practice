@@ -96,10 +96,11 @@ console.log('The following currencies are valid:',initialCurrency, targetCurrenc
 
 
 var rate = rates[initialCurrency][targetCurrency];
-console.log('The rate is:', rate);
+//console.log('The rate is:', rate);
 
 var result = amount * rate;
-console.log('The result is:', result);
+//console.log('The result is:', result);
+
 // --------------------------------------------------
 // Step 6: Display results
 // --------------------------------------------------
@@ -107,3 +108,4 @@ console.log('The result is:', result);
 
 // This message should also include the original amount and currency information
 // supplied by the user.
+console.log(`The amount of ${amount} ${initialCurrency} into ${result} ${targetCurrency}.`);
