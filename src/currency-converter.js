@@ -19,6 +19,9 @@
     return item;
 })
 */
+
+var { validateUserInput } = require('./functions.js');
+
 var amount = process.argv[2];
 var initialCurrency = process.argv[3];
 var targetCurrency = process.argv[4];
@@ -37,7 +40,7 @@ console.log('The targetCurrency is:', targetCurrency);
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
 
-function validateUserInput(){
+/*function validateUserInput(){
     if (amount === undefined || initialCurrency === undefined || targetCurrency === undefined){
         
         if(amount === undefined){
@@ -55,8 +58,8 @@ function validateUserInput(){
 
  }
 }
-
-validateUserInput();
+*/
+validateUserInput(amount, initialCurrency, targetCurrency);
 
 
 // --------------------------------------------------
