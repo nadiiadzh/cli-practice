@@ -21,7 +21,7 @@
 */
 
 var { validateUserInput } = require('./functions.js');
-
+var { getRate } = require('./functions.js');
 var amount = process.argv[2];
 var initialCurrency = process.argv[3];
 var targetCurrency = process.argv[4];
@@ -117,7 +117,8 @@ console.log('The following currencies are valid:',initialCurrency, targetCurrenc
 // Now we will compute the rate, apply it to the amount, and capture the result.
 
 
-var rate = rates[initialCurrency][targetCurrency];
+
+var rate = getRate(rates, initialCurrency, targetCurrency)
 //console.log('The rate is:', rate);
 
 var result = amount * rate;
