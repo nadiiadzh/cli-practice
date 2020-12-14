@@ -14,10 +14,11 @@
 // In this step we will capture the command line  information supplied by the user.
 
 // We will store each piece of information in a dedicated variable for later use.
-process.argv.map((item) =>{
+/*process.argv.map((item) =>{
     console.log(item);
     return item;
 })
+*/
 var amount = process.argv[2];
 var initialCurrency = process.argv[3];
 var targetCurrency = process.argv[4];
@@ -51,7 +52,18 @@ if (amount === undefined || initialCurrency === undefined || targetCurrency === 
 // The conversion rates do not have to be accurate, athough this resource contains
 // up-to-date rate information: https://www.xe.com/
 
+var rates = {
+    USD: {
+        CAD: 2,
+    },
+    CAD: {
+        USD: 0.5,
+    },
+};
 
+console.log(rates);
+console.log(rates[initialCurrency]);
+console.log(rates[initialCurrency][targetCurrency]);
 
 // --------------------------------------------------
 // Step 4: Ensure that a conversion rate exists
