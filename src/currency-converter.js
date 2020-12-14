@@ -23,9 +23,11 @@ var amount = process.argv[2];
 var initialCurrency = process.argv[3];
 var targetCurrency = process.argv[4];
 
+/*
 console.log('The amount is:', amount);
 console.log('The initialCurrency is:', initialCurrency);
 console.log('The targetCurrency is:', targetCurrency);
+*/
 
 // --------------------------------------------------
 // Step 2: Validate user input
@@ -34,10 +36,27 @@ console.log('The targetCurrency is:', targetCurrency);
 
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
-if (amount === undefined || initialCurrency === undefined || targetCurrency === undefined){
-    console.log('You did not provide  the amount, initial currency or target currency.');
-    process.exit();
+
+function validateUserInput(){
+    if (amount === undefined || initialCurrency === undefined || targetCurrency === undefined){
+        
+        if(amount === undefined){
+            console.log('You did not provide  the amount');
+            process.exit();
+        }else if(initialCurrency === undefined){
+            console.log('You did not provide  the initial currency');
+            process.exit();
+        }else{
+            console.log('You did not provide  the target currency');
+            process.exit();
+        }
+        //console.log('You did not provide  the amount, initial currency or target currency.');
+       // process.exit();
+
+ }
 }
+
+validateUserInput();
 
 
 // --------------------------------------------------
