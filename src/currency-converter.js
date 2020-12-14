@@ -95,7 +95,11 @@ console.log('The following currencies are valid:',initialCurrency, targetCurrenc
 // Now we will compute the rate, apply it to the amount, and capture the result.
 
 
+var rate = rates[initialCurrency][targetCurrency];
+console.log('The rate is:', rate);
 
+var result = amount * rate;
+console.log('The result is:', result);
 // --------------------------------------------------
 // Step 6: Display results
 // --------------------------------------------------
